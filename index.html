@@ -130,6 +130,25 @@ button:hover {
     para aprobar un examen y saber si estás aprobado. Es una herramienta útil 
     para estudiantes de secundaria y universidad en todo el mundo.
   </p>
+    <p>
+También puedes usar esta herramienta para calcular tu promedio universitario, 
+estimar resultados de exámenes y organizar mejor tus estudios. 
+Ideal para estudiantes de secundaria y universidad.
+</p>
+</div>
+  <div class="section">
+  <h3>Calculadora de nota final</h3>
+
+  <input type="number" id="p1" placeholder="Parcial 1">
+  <input type="number" id="p2" placeholder="Parcial 2">
+  <input type="number" id="final" placeholder="Nota del final">
+  <input type="number" id="pesoFinal2" placeholder="Peso del final (%)">
+
+  <br><br>
+
+  <button onclick="calcularFinal()">Calcular</button>
+
+  <p id="resultado4" class="resultado"></p>
 </div>
 </div>
 
@@ -169,6 +188,19 @@ function calcularNecesaria() {
     document.getElementById("resultado3").innerText =
       "No aprobaste. Te faltó llegar a " + min;
   }
+}
+  function calcularFinal() {
+  let p1 = Number(document.getElementById("p1").value);
+  let p2 = Number(document.getElementById("p2").value);
+  let final = Number(document.getElementById("final").value);
+  let peso = Number(document.getElementById("pesoFinal2").value) / 100;
+
+  let promedioParciales = (p1 + p2) / 2;
+
+  let notaFinal = (promedioParciales * (1 - peso)) + (final * peso);
+
+  document.getElementById("resultado4").innerText =
+    "Tu nota final es: " + notaFinal.toFixed(2);
 }
 </script>
 
