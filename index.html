@@ -3,23 +3,64 @@
 <head>
   <meta charset="UTF-8">
   <title>Calculadora Estudiantil</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      background: #f4f6f8;
+      text-align: center;
+      padding: 40px;
+    }
+
+    .container {
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      max-width: 400px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    input {
+      padding: 10px;
+      margin: 5px;
+      width: 80%;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      background: #4CAF50;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #45a049;
+    }
+  </style>
 </head>
 
 <body>
 
-<h1>Calculadora Estudiantil</h1>
+<div class="container">
+  <h1>Calculadora Estudiantil</h1>
 
-<h2>Promedio</h2>
+  <h3>Promedio</h3>
 
-<input type="number" id="nota1" placeholder="Nota 1">
-<input type="number" id="nota2" placeholder="Nota 2">
-<input type="number" id="nota3" placeholder="Nota 3">
+  <input type="number" id="nota1" placeholder="Nota 1">
+  <input type="number" id="nota2" placeholder="Nota 2">
+  <input type="number" id="nota3" placeholder="Nota 3">
 
-<br><br>
+  <br><br>
 
-<button onclick="calcularPromedio()">Calcular promedio</button>
+  <button onclick="calcularPromedio()">Calcular</button>
 
-<p id="resultado"></p>
+  <p id="resultado"></p>
+</div>
 
 <script>
 function calcularPromedio() {
