@@ -60,6 +60,17 @@
   <button onclick="calcularPromedio()">Calcular</button>
 
   <p id="resultado"></p>
+<h3>¿Cuánto necesito para aprobar?</h3>
+
+<input type="number" id="notaActual" placeholder="Nota actual">
+<input type="number" id="notaMinima" placeholder="Nota para aprobar">
+<input type="number" id="pesoFinal" placeholder="Peso del final (%)">
+
+<br><br>
+
+<button onclick="calcularNecesaria()">Calcular</button>
+
+<p id="resultado2"></p>
 </div>
 
 <script>
@@ -72,6 +83,16 @@ function calcularPromedio() {
 
   document.getElementById("resultado").innerText =
     "Tu promedio es: " + promedio.toFixed(2);
+}
+function calcularNecesaria() {
+  let actual = Number(document.getElementById("notaActual").value);
+  let minima = Number(document.getElementById("notaMinima").value);
+  let peso = Number(document.getElementById("pesoFinal").value) / 100;
+
+  let necesaria = (minima - (actual * (1 - peso))) / peso;
+
+  document.getElementById("resultado2").innerText =
+    "Necesitás sacar: " + necesaria.toFixed(2);
 }
 </script>
 
