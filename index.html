@@ -41,6 +41,15 @@
     button:hover {
       background: #45a049;
     }
+  h3 {
+  margin-top: 30px;
+}
+
+.section {
+  margin-top: 20px;
+  padding: 15px;
+  border-top: 1px solid #eee;
+}
   </style>
 </head>
 
@@ -49,6 +58,7 @@
 <div class="container">
   <h1>Calculadora Estudiantil</h1>
 
+ <div class="section">
   <h3>Promedio</h3>
 
   <input type="number" id="nota1" placeholder="Nota 1">
@@ -60,6 +70,8 @@
   <button onclick="calcularPromedio()">Calcular</button>
 
   <p id="resultado"></p>
+   </div>
+  <div class="section">
 <h3>¿Cuánto necesito para aprobar?</h3>
 
 <input type="number" id="notaActual" placeholder="Nota actual">
@@ -71,6 +83,7 @@
 <button onclick="calcularNecesaria()">Calcular</button>
 
 <p id="resultado2"></p>
+    </div>
 </div>
 
 <script>
