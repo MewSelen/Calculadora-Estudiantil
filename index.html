@@ -5,7 +5,6 @@
   <title>Calculadora Estudiantil</title>
 
   <style>
-   <style>
 body {
   font-family: Arial, sans-serif;
   background: linear-gradient(135deg, #dbeafe, #fce7f3);
@@ -64,7 +63,6 @@ button:hover {
   font-size: 16px;
 }
 </style>
-  </style>
 </head>
 
 <body>
@@ -98,6 +96,20 @@ button:hover {
 
 <p id="resultado2" class="resultado"></p>
     </div>
+  <div class="section">
+  <h3>¿Apruebo o no?</h3>
+
+  <input type="number" id="n1" placeholder="Nota 1">
+  <input type="number" id="n2" placeholder="Nota 2">
+  <input type="number" id="n3" placeholder="Nota 3">
+  <input type="number" id="min" placeholder="Nota mínima para aprobar">
+
+  <br><br>
+
+  <button onclick="verificarAprobacion()">Ver resultado</button>
+
+  <p id="resultado3" class="resultado"></p>
+</div>
 </div>
 
 <script>
@@ -120,6 +132,22 @@ function calcularNecesaria() {
 
   document.getElementById("resultado2").innerText =
     "Necesitás sacar: " + necesaria.toFixed(2);
+}
+  function verificarAprobacion() {
+  let n1 = Number(document.getElementById("n1").value);
+  let n2 = Number(document.getElementById("n2").value);
+  let n3 = Number(document.getElementById("n3").value);
+  let min = Number(document.getElementById("min").value);
+
+  let promedio = (n1 + n2 + n3) / 3;
+
+  if (promedio >= min) {
+    document.getElementById("resultado3").innerText =
+      "Aprobaste con " + promedio.toFixed(2) + " 🎉";
+  } else {
+    document.getElementById("resultado3").innerText =
+      "No aprobaste. Te faltó llegar a " + min;
+  }
 }
 </script>
 
